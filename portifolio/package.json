@@ -1,6 +1,7 @@
 {
   "name": "portifolio",
   "private": true,
+  "home": "https://hermessoftwareengineer.github.io/portifolio.io/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
