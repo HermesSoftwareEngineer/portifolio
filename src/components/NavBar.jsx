@@ -72,23 +72,27 @@ const NavBar = () => {
               className="group flex items-center space-x-2"
             >
               <div className={`
-                w-10 h-10 rounded-xl flex items-center justify-center
-                transition-all duration-300 group-hover:scale-110
+                w-8 h-8 rounded-xl flex items-center justify-center
+                transition-all duration-300 group-hover:scale-110 mx-2
                 ${isDark 
                   ? 'bg-gradient-to-br from-primary-500 to-secondary-500' 
                   : 'bg-gradient-to-br from-primary-600 to-secondary-600'
                 }
               `}>
-                <span className="text-white font-bold text-lg">H</span>
+                <span className="text-white font-bold text-lg">
+                  <img src="icon.png" />
+                </span>
               </div>
               <span className={`
                 text-xl font-bold transition-colors duration-300
                 ${isDark 
                   ? 'text-white group-hover:text-primary-400' 
+                  : isScrolled
+                  ? 'text-slate-100 group-hover:text-primary-600'
                   : 'text-gray-900 group-hover:text-primary-600'
                 }
               `}>
-                Hermes
+                Hermes Software Engineer
               </span>
             </button>
           </div>
