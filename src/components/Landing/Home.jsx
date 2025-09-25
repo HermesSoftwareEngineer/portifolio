@@ -4,6 +4,13 @@ import { useTheme } from '../../contexts/ThemeContext';
 const Home = () => {
   const { isDark } = useTheme();
   
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <section id="home" className={`
       min-h-screen flex items-center justify-center transition-all duration-300 relative
@@ -24,27 +31,33 @@ const Home = () => {
           text-lg mb-8 max-w-2xl mx-auto animate-slide-up
           ${isDark ? 'text-gray-300' : 'text-gray-600'}
         `}>
-          Apaixonado por criar soluções digitais inovadoras e experiências de usuário excepcionais
+          Profissional proativo e resiliente, que não tem medo de novos desafios e vê em cada um deles a chance de evoluir e entregar soluções de valor.
         </p>
         <div className="space-x-4 animate-slide-up">
-          <button className={`
-            px-8 py-3 rounded-lg font-semibold transition-all duration-300 
-            transform hover:scale-105 shadow-lg hover:shadow-xl
-            ${isDark 
-              ? 'bg-blue-600 hover:bg-blue-500 text-white' 
-              : 'bg-blue-700 hover:bg-blue-800 text-white'
-            }
-          `}>
+          <button 
+            onClick={() => scrollToSection('projects')}
+            className={`
+              px-8 py-3 rounded-lg font-semibold transition-all duration-300 
+              transform hover:scale-105 shadow-lg hover:shadow-xl
+              ${isDark 
+                ? 'bg-blue-600 hover:bg-blue-500 text-white' 
+                : 'bg-blue-700 hover:bg-blue-800 text-white'
+              }
+            `}
+          >
             Ver Projetos
           </button>
-          <button className={`
-            px-8 py-3 rounded-lg font-semibold transition-all duration-300 
-            transform hover:scale-105 shadow-lg hover:shadow-xl border-2
-            ${isDark 
-              ? 'border-blue-300 text-blue-200 hover:bg-blue-300 hover:text-slate-900' 
-              : 'border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white'
-            }
-          `}>
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className={`
+              px-8 py-3 rounded-lg font-semibold transition-all duration-300 
+              transform hover:scale-105 shadow-lg hover:shadow-xl border-2
+              ${isDark 
+                ? 'border-blue-300 text-blue-200 hover:bg-blue-300 hover:text-slate-900' 
+                : 'border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white'
+              }
+            `}
+          >
             Contato
           </button>
         </div>
