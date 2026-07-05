@@ -63,7 +63,7 @@ const SkillCarousel = ({ skills, title, isDark, reverse }) => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .embla {
           overflow: hidden;
         }
